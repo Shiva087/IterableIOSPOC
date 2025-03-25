@@ -1,19 +1,20 @@
-//
-//  AppDelegate.swift
-//  IterableIOSPOC
-//
-//  Created by Siva Suthan on 2025-03-25.
-//
-
 import UIKit
+import IterableSDK
+import UserNotifications
+
+let ITERABLE_API_KEY = ""
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let iterableConfig = IterableConfig()
+        IterableAPI.initialize(apiKey: ITERABLE_API_KEY, launchOptions:launchOptions, config: iterableConfig)
+        IterableAPI.email = "Your email address"
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
+        UIApplication.shared.registerForRemoteNotifications()
         return true
     }
 
@@ -31,6 +32,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    // MARK: Push Notification
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        IterableAPI.register(token: deviceToken)
+        let pushToken = deviceToken.map{ data in String(format: "%02.2hhx", data) }.joined()
+        print("Your token \(pushToken)")
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print(userInfo)
+        IterableAppIntegration.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+    }
+    
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        print(userInfo)
+        completionHandler([.alert, .sound])
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print(userInfo)
+        IterableAppIntegration.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    }
+}

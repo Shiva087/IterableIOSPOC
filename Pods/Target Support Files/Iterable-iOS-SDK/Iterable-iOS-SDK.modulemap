@@ -1,0 +1,6 @@
+module IterableSDK {
+  umbrella header "Iterable-iOS-SDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

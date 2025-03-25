@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EA08108D6BA6FA0723E56358 /* libPods-IterableIOSPOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD19876227D8820D82C37DB /* libPods-IterableIOSPOC.a */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		135EC5692D92BB7500F75DD2 /* IterableIOSPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IterableIOSPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		995D516E0F729BABF66B1A86 /* Pods-IterableIOSPOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterableIOSPOC.release.xcconfig"; path = "Target Support Files/Pods-IterableIOSPOC/Pods-IterableIOSPOC.release.xcconfig"; sourceTree = "<group>"; };
+		BBD19876227D8820D82C37DB /* libPods-IterableIOSPOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IterableIOSPOC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE07051862CBB7F522B1B882 /* Pods-IterableIOSPOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterableIOSPOC.debug.xcconfig"; path = "Target Support Files/Pods-IterableIOSPOC/Pods-IterableIOSPOC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA08108D6BA6FA0723E56358 /* libPods-IterableIOSPOC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4720BB0033A37C7733BFFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE07051862CBB7F522B1B882 /* Pods-IterableIOSPOC.debug.xcconfig */,
+				995D516E0F729BABF66B1A86 /* Pods-IterableIOSPOC.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		135EC5602D92BB7500F75DD2 = {
 			isa = PBXGroup;
 			children = (
 				135EC56B2D92BB7500F75DD2 /* IterableIOSPOC */,
 				135EC56A2D92BB7500F75DD2 /* Products */,
+				0E4720BB0033A37C7733BFFB /* Pods */,
+				5BA9C42D662DE9862CE546B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +77,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5BA9C42D662DE9862CE546B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBD19876227D8820D82C37DB /* libPods-IterableIOSPOC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 135EC57C2D92BB7600F75DD2 /* Build configuration list for PBXNativeTarget "IterableIOSPOC" */;
 			buildPhases = (
+				E68D1F8E13418AA71ADDC0AC /* [CP] Check Pods Manifest.lock */,
 				135EC5652D92BB7500F75DD2 /* Sources */,
 				135EC5662D92BB7500F75DD2 /* Frameworks */,
 				135EC5672D92BB7500F75DD2 /* Resources */,
+				2EA1E57F62285710527485D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				135EC56B2D92BB7500F75DD2 /* IterableIOSPOC */,
 			);
 			name = IterableIOSPOC;
-			packageProductDependencies = (
-			);
 			productName = IterableIOSPOC;
 			productReference = 135EC5692D92BB7500F75DD2 /* IterableIOSPOC.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EA1E57F62285710527485D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IterableIOSPOC/Pods-IterableIOSPOC-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IterableIOSPOC/Pods-IterableIOSPOC-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IterableIOSPOC/Pods-IterableIOSPOC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E68D1F8E13418AA71ADDC0AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IterableIOSPOC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		135EC5652D92BB7500F75DD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,11 +209,14 @@
 /* Begin XCBuildConfiguration section */
 		135EC57D2D92BB7600F75DD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE07051862CBB7F522B1B882 /* Pods-IterableIOSPOC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IterableIOSPOC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -152,12 +224,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iana.IterableIOSPOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poc.IterableIOSPOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -167,11 +240,14 @@
 		};
 		135EC57E2D92BB7600F75DD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995D516E0F729BABF66B1A86 /* Pods-IterableIOSPOC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IterableIOSPOC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -179,12 +255,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iana.IterableIOSPOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poc.IterableIOSPOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

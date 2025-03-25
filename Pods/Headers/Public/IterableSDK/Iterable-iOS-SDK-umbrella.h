@@ -1,0 +1,1 @@
+../../../Target Support Files/Iterable-iOS-SDK/Iterable-iOS-SDK-umbrella.h

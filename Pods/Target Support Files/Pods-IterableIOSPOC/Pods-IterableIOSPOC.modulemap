@@ -1,0 +1,6 @@
+module Pods_IterableIOSPOC {
+  umbrella header "Pods-IterableIOSPOC-umbrella.h"
+
+  export *
+  module * { export * }
+}

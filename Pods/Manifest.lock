@@ -1,0 +1,16 @@
+PODS:
+  - Iterable-iOS-SDK (6.5.11)
+
+DEPENDENCIES:
+  - Iterable-iOS-SDK
+
+SPEC REPOS:
+  trunk:
+    - Iterable-iOS-SDK
+
+SPEC CHECKSUMS:
+  Iterable-iOS-SDK: c8f3bc4a7d684c2a489fcdf43a050c50a41dac55
+
+PODFILE CHECKSUM: 78da5ae5165f8d8d3784af811d36bdb165181cce
+
+COCOAPODS: 1.16.2

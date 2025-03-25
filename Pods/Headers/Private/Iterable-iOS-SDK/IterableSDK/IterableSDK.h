@@ -1,0 +1,1 @@
+../../../../Iterable-iOS-SDK/swift-sdk/IterableSDK.h
